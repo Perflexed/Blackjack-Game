@@ -1,3 +1,8 @@
+/*
+# is used to specify that you're referring to an id 
+. is used to specify that you're referring to a class
+*/
+
 body {
     /*BACKGROUND*/
     background-image:url("images/greenfelt.jpg");
@@ -23,4 +28,16 @@ h1 {
     padding-top:5px;
     padding-bottom:5px;
     width:150px;
+    margin:2px;
+}
+#newCard-btn {
+    border:none;
+    border-radius:2px;
+    background-color:goldenrod;
+    color:#016f32;
+    font-weight:bold;
+    padding-top:5px;
+    padding-bottom:5px;
+    width:150px;
+    margin:2px;
 }
