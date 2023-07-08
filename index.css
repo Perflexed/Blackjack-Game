@@ -1,0 +1,26 @@
+body {
+    /*BACKGROUND*/
+    background-image:url("images/greenfelt.jpg");
+    background-size:cover;
+    /*TEXT*/
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align:center;
+    color:white;
+    font-weight:bold;
+}
+h1 {
+    color:goldenrod;
+}
+#message-el {
+    font-style:italic;
+}
+#start-btn {
+    border:none;
+    border-radius:2px;
+    background-color:goldenrod;
+    color:#016f32;
+    font-weight:bold;
+    padding-top:5px;
+    padding-bottom:5px;
+    width:150px;
+}
