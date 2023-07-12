@@ -5,10 +5,18 @@
     <body>
         <h1>Blackjack</h1>
         <h2 id="message-el">Want to play a round?</h2>
+        <div id="startBtn-div">
+            <button id="start-btn" onclick="startGame()">START GAME</button>
+        </div>
+        <div id="newCardBtn-div">
+            <button id="newCard-btn" onclick="newCard()">NEW CARD</button>
+        </div>
+        <div id="aceCard-btn">
+            <button id="aceOne-el">1</button>
+            <button id="aceEleven-el">11</button>
+        </div>
         <p id="cards-el">Cards: </p>
         <p id="sum-el">Sum: </p>
-        <button id="start-btn" onclick="startGame()">START GAME</button>
-        <button id="newCard-btn" onclick="newCard()">NEW CARD</button>
         <p id="player-el"></p>
 
         

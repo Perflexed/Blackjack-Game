@@ -12,6 +12,8 @@ body {
     text-align:center;
     color:white;
     font-weight:bold;
+    /*WINDOW SIZE*/
+    min-width:370px;
 }
 h1 {
     color:goldenrod;
@@ -19,7 +21,7 @@ h1 {
 #message-el {
     font-style:italic;
 }
-#start-btn {
+button {
     border:none;
     border-radius:2px;
     background-color:goldenrod;
@@ -30,14 +32,6 @@ h1 {
     width:150px;
     margin:2px;
 }
-#newCard-btn {
-    border:none;
-    border-radius:2px;
-    background-color:goldenrod;
-    color:#016f32;
-    font-weight:bold;
-    padding-top:5px;
-    padding-bottom:5px;
-    width:150px;
-    margin:2px;
+#button-div {
+    min-width:min-content;
 }

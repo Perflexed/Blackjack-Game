@@ -1,13 +1,13 @@
 //PLAYER
 let player={
-    name:"Josh",
+    name:"Player",
     cash:200,
 }
 let playerEl=document.getElementById("player-el")
 playerEl.textContent=player.name+": $"+player.cash
 //CASH
 //function cashDeduct() {
-//    player.cash=10
+//    player.cash-=10
 //    console.log("cash taken!")
 //    return player.cash
 //}
@@ -22,6 +22,11 @@ let isAlive=false
 let message=""
 let cards=[]
 let sum=" "
+//BUTTONS
+const startBtn=document.getElementById("start-btn").style.display=""
+const newCardBtn=document.getElementById("newCard-btn").style.display="none"
+const aceOneEl=document.getElementById("aceOne-el").style.display="none"
+const aceElevenEl=document.getElementById("aceEleven-el").style.display="none"
 //START GAME
 function startGame() {
     isAlive=true
@@ -29,6 +34,10 @@ function startGame() {
     let secondCard=getRandomCard()
     cards=[firstCard,secondCard]
     sum=firstCard+secondCard
+    document.getElementById("start-btn").style.display="none"
+    document.getElementById("newCard-btn").style.display="unset"
+    document.getElementById("aceOne-el").style.display="none"
+    document.getElementById("aceEleven-el").style.display="none"
     renderGame()
 }
 //RENDER GAME
@@ -43,15 +52,19 @@ function renderGame() {
     }else if (sum===21) { // === means that the variable should be equivilant to the number rather than = which changes the variable to equal the number, using == is less strict and will accept values as numbers or strings rather than one or ther other.
             message="You've got Blackjack!"
             hasBlackjack=true
+            document.getElementById("start-btn").style.display="unset"
+            document.getElementById("newCard-btn").style.display="none"
     }else {
-             message="You lose!" 
+            message="You lose!" 
             isAlive=false
-    }console.log(message)
+            document.getElementById("start-btn").style.display="unset"
+            document.getElementById("newCard-btn").style.display="none"
+    }
     messageEl.textContent=message
     }
 //NEW CARD
 function newCard() {
-    if(isAlive==true&&hasBlackjack===false) { //THIS IS AN "AND" STATEMENT AND REQUIRES BOTH CONDITIONS ARE MET TO CONTINUE.
+    if(isAlive===true&&hasBlackjack===false) { //THIS IS AN "AND" STATEMENT AND REQUIRES BOTH CONDITIONS ARE MET TO CONTINUE.
         let card=getRandomCard()
         sum+=card
         cards.push(card)
@@ -60,14 +73,26 @@ function newCard() {
 }
 //RANDOM CARD
 function getRandomCard() {
-    let randomCard=Math.floor(Math.random()*13)+1
-    //THIS IS JUST A PLACEHOLDER BECAUSE MAKING THE ACE HAVE BOTH 1 OR 11 OPTIONS IS TOO COMPLEX RN.
-    if (randomCard===1){
-        return 11
-    }else if (randomCard>11) {
-        return 10
-    }else {
-        return (randomCard)
-    }
-    //END OF PLACEHOLDER.
+    let randomCard=Math.floor(Math.random()*12)+1
+        if (randomCard===1&&hasBlackjack===false&&isAlive===true){
+            document.getElementById("newCard-btn").style.display="none"
+            document.getElementById("aceOne-el").style.display="unset"
+            document.getElementById("aceEleven-el").style.display="unset"
+            return new Promise(getAceCard)
+        }else if (randomCard>10) {
+            return 10
+        }else {
+            return (randomCard)
+        }
+}
+//ACE CARD
+function getAceCard(aceOne,aceEleven) {
+    aceOne();{
+        aceOneEl.addEventListener("click");{
+            return 1}
+        }
+    aceElevenEl();{
+        aceElevenEl.addEventListener("click");{
+            return 11}
+        }
 }
